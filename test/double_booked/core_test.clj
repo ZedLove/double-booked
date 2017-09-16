@@ -1,6 +1,6 @@
 (ns double-booked.core-test
   (:require [clj-time.core :as t]
-            [clojure.test :as test :refer [deftest is testing]]
+            [clojure.test :refer [deftest is testing]]
             [double-booked.core :refer :all]))
 
 (deftest generate-events!-test
