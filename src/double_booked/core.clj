@@ -36,13 +36,13 @@
 (defn- get-overlaps-for-event
   "Given a sequence of events and an event to check against,
    returns a vector of pairs of matching events, sorted by event :id."
-  [evts e1]
+  [evs e1]
   (reduce
    (fn [acc e2]
      (if (events-overlap? e1 e2)
        (conj acc (sort-by :id [e1 e2]))
        acc))
-   [] evts))
+   [] evs))
 
 (defn- find-overlapping-events
   "Given a sequence of events, find all overlapping pairs.

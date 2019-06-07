@@ -10,7 +10,8 @@
     (is (= default-event-num (count (generate-events!)))))
   (testing "Generates valid events"
     (is (let [{:keys [id start end]} (first (generate-events! 1))]
-          (and id start end)))))
+          (and (and id start end)
+               (t/after? end start))))))
 
 (deftest events-overlap?-test
   (testing "Doesn't check events of the same ID"
